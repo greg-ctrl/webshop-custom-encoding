@@ -1,18 +1,16 @@
 <?php 
 
 function encode(string $text) {
-    $encodedText = base64_encode($text);
-    $cipherText = encipher($encodedText, 3);
-    return $cipherText;
+    $text = base64_encode($text);
+    $text = encipher($text, 3);
+    return $text;
 }
-
 
 function decode(string $text) {
-    $decodedText = base64_decode($text);
-    $plainText = decipher($cipherText, 3);
-    return $plainText;
+    $text = decipher($text, 3);
+    $text = base64_decode($text);
+    return $text;
 }
-
 
 function cipher($ch, $key) {
 	if (!ctype_alpha($ch)) {
